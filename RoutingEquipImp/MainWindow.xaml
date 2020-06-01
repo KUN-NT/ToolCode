@@ -1,0 +1,34 @@
+﻿<Window x:Class="RoutingEquipImp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RoutingEquipImp"
+        mc:Ignorable="d" Background="#FFE5E5E5"
+        Title="数据导入" Height="600" Width="750" MinWidth="750">
+    <Grid Margin="20">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Text="文件路径" VerticalAlignment="Top" FontSize="16" Grid.Column="0" Grid.Row="0"/>
+        <TextBox x:Name="txtFilePath" FontSize="16" Grid.Column="1" Grid.Row="0" Margin="10,0"/>
+        <Button x:Name="btnRead" Content="读  取" Click="BtnRead_Click" FontSize="16" Grid.Column="2" Grid.Row="0" Width="100"/>
+        <StackPanel Orientation="Horizontal"  HorizontalAlignment="Left"  VerticalAlignment="Center"  Margin="0,20" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1">
+            <TextBlock Text="Sheet索引" FontSize="16"/>
+            <TextBox x:Name="txtIndex" FontSize="16" Width="100" Margin="10,0"/>
+            <TextBlock Text="遍历行数" FontSize="16"/>
+            <TextBox x:Name="txtCount" FontSize="16" Width="100" Margin="10,0"/>
+            <TextBlock Text="文件类型" FontSize="16"/>
+            <TextBox x:Name="txtType" FontSize="16" Width="100" Margin="10,0"/>
+            <TextBlock x:Name="labFinish" Text="处理完成" FontSize="20" Margin="20,0,0,0" Foreground="#FFFB0D0D"/>
+        </StackPanel>
+        <TextBox x:Name="txtMessage" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" FontSize="16" VerticalScrollBarVisibility="Auto" />
+    </Grid>
+</Window>
