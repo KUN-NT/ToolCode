@@ -89,11 +89,11 @@ namespace RoutingEquipImp
                 var result = service.ImportEquipMasters(centerItems,machItems);
                 if (result == "Y")
                 {
-                    txtMessage.Dispatcher.Invoke(new RefleshUI(SetMessage),"处理完成");
+                    txtMessage.Dispatcher.Invoke(new RefleshUI(SetMessage),true,"处理完成");
                 }
                 else
                 {
-                    txtMessage.Dispatcher.Invoke(new RefleshUI(SetMessage), result);
+                    txtMessage.Dispatcher.Invoke(new RefleshUI(SetMessage),false, result);
                 }
                 centerItems.Clear();
                 machItems.Clear();

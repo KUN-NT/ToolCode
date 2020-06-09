@@ -9,7 +9,7 @@ namespace GridViewPage
     class DataOperate
     {
         public static MySqlConnection myconn = null;
-        public static string connectionString = "Server=127.0.0.1;port=3306;database=his_db;user=root;password=root;charset=utf8;pooling=true;";
+        public static string connectionString = "Server=127.0.0.1;port=3306;database=his_db;user=root;password=123456;charset=utf8;pooling=true;";
 
         public static MySqlConnection getcon()
         {
