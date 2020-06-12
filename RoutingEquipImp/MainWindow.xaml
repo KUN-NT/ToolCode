@@ -11,6 +11,7 @@
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="Auto"/>
@@ -30,5 +31,6 @@
             <TextBlock x:Name="labFinish" Text="处理完成" FontSize="20" Margin="20,0,0,0" Foreground="#FFFB0D0D"/>
         </StackPanel>
         <TextBox x:Name="txtMessage" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3" FontSize="16" VerticalScrollBarVisibility="Auto" />
+        <Button x:Name="btnCheck" Content="数据校验" Click="BtnCheck_Click" FontSize="16" Grid.Column="0" Grid.Row="3" Width="100"/>
     </Grid>
 </Window>

@@ -49,6 +49,11 @@ namespace RoutingEquipImp
                     string stationName = sheet.Cells["K" + rowIndex.ToString()].StringValue.Trim();
                     string processId = sheet.Cells["L" + rowIndex.ToString()].StringValue.Trim();
                     string stationCode = sheet.Cells["M" + rowIndex.ToString()].StringValue.Trim();
+                    if (NoEquipItem.Contains(itemCode))
+                    {
+                        rowIndex++;
+                        continue;
+                    }
                     if (!string.IsNullOrWhiteSpace(itemCode) && currentRouting == "")
                     {
                         InitialData();

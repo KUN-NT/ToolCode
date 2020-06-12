@@ -49,6 +49,23 @@ namespace RoutingEquipImp
             MessageBox.Show($"处理完成{num}项");
         }
 
+        private async void BtnCheck_Click(object sender, RoutedEventArgs e)
+        {
+            int index = int.Parse(txtIndex.Text);
+            int count = int.Parse(txtCount.Text);
+            string dataFolder = txtFilePath.Text;
+            btnCheck.IsEnabled = false;
+            foreach (var filePath in Directory.GetFiles(dataFolder, $"*.{txtType.Text}", SearchOption.TopDirectoryOnly))
+            {
+                if (filePath.Contains("$")) continue;
+                using (var book = new Workbook(filePath))
+                {
+                    await DataCheck(book.Worksheets);
+                }
+            }
+            btnCheck.IsEnabled = true;
+        }
+
         private static int i = 1;
         private static int num = 0;
         private void SetMessage(bool isSuccess,string msg)

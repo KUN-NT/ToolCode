@@ -102,6 +102,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="DataCheck.cs" />
     <Compile Include="EquipMasterImport.cs" />
     <Compile Include="RoutingDetailImport.cs" />
     <Page Include="MainWindow.xaml">
