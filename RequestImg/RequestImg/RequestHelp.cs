@@ -46,6 +46,7 @@ namespace RequestImg
                 {
                     strUri.Remove(strUri.Length - 1, 1); //去掉'？'
                 }
+                if (SetUrl != null) SetUrl(strUri.ToString());
                 HttpResponseMessage response = await client.GetAsync(strUri.ToString());
                 if (response.IsSuccessStatusCode)
                 {
@@ -54,5 +55,6 @@ namespace RequestImg
                 return default(T);
             }
         }
+        public static Action<string> SetUrl;
     }
 }

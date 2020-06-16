@@ -21,6 +21,7 @@ namespace RequestImg
                 Directory.CreateDirectory(txtPath);
             }
             fileAllName = txtPath + @"\key.txt";
+            RequestHelp.SetUrl += SetLabShowContent;
         }
 
         private string oauthId = "";
@@ -74,7 +75,24 @@ namespace RequestImg
             if (!string.IsNullOrEmpty(txtGuanTable.Text)) myparam["re"] = txtGuanTable.Text.Trim();
             myparam["extra"] = txtExtra.Text.Trim();
             if (!string.IsNullOrEmpty(txtFileTable.Text)) myparam["item"] = txtFileTable.Text.Trim();
-            ResultList<Guan> result = await RequestHelp.TryGetAsync<ResultList<Guan>>($"api/{oauthId}/relation/{txtFTable.Text.Trim()}/{listResult.SelectedValue.ToString()}/data", myparam);
+            var partNo = "";
+            if (listResult.SelectedValue!=null)
+            {
+                partNo = listResult.SelectedValue.ToString();
+            }
+            else
+            {
+                if (!string.IsNullOrEmpty(txtPartNo.Text))
+                {
+                    partNo = txtPartNo.Text.Trim();
+                }
+                else
+                {
+                    MessageBox.Show("请选择要查询的零件");
+                    return;
+                }
+            }
+            ResultList<Guan> result = await RequestHelp.TryGetAsync<ResultList<Guan>>($"api/{oauthId}/relation/{txtFTable.Text.Trim()}/{partNo}/data", myparam);
             if (result == null)
             {
                 txtFMessage.Text = "未获取授权";
@@ -85,7 +103,7 @@ namespace RequestImg
                 txtMessage.Text = "Success";
                 foreach (var mpart in result.list)
                 {
-                    resultData.Add(mpart.objId + "." + mpart.suffix);
+                    resultData.Add(mpart.objId + ":" + mpart.fname);// + "." + mpart.suffix);
                 }
                 resultData.ForEach(p => listFResult.Items.Add(p));
             }
@@ -101,8 +119,14 @@ namespace RequestImg
 
         private void BtnShow_Click(object sender, RoutedEventArgs e)
         {
-            string uri = $"{RequestHelp.BaseUri}/web/search/detail?rid={txtOuath.Text.Trim()}&id={listFResult.SelectedValue.ToString().Split('.')[0]}&t={txtShowTable.Text.Trim()}";
-            System.Diagnostics.Process.Start(uri);
+            if (listFResult.SelectedValue==null)
+            {
+                MessageBox.Show("请选择一条数据");
+                return;
+            }
+            string uri = $"{RequestHelp.BaseUri}/web/search/detail?rid={txtOuath.Text.Trim()}&id={listFResult.SelectedValue.ToString().Split(':')[0]}&t={txtShowTable.Text.Trim()}";
+            //System.Diagnostics.Process.Start(uri);
+            System.Diagnostics.Process.Start("iexplore.exe", uri);
         }
 
         private async Task GetKey(string fileAllName)
@@ -130,6 +154,11 @@ namespace RequestImg
                 MessageBox.Show(result.errmsg);
             }
             txtOuath.Text = oauthId;
+        }
+
+        private void SetLabShowContent(string value)
+        {
+            this.labShow.Content = value;
         }
     }
 }

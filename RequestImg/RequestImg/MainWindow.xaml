@@ -30,12 +30,14 @@
         <TextBlock x:Name="txtSize_Copy1" HorizontalAlignment="Left" TextWrapping="Wrap" Text="文件表名 " VerticalAlignment="Top" Margin="369,237,0,0"/>
         <TextBox x:Name="txtFileTable" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="83" Margin="422,233,0,0" Text="DESF"/>
         <TextBlock x:Name="txtSize_Copy2" HorizontalAlignment="Left" TextWrapping="Wrap" Text="表名" VerticalAlignment="Top" Margin="515,236,0,0"/>
-        <TextBox x:Name="txtFTable" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="549,232,0,0" Text="MPART"/>
+        <TextBox x:Name="txtFTable" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" Margin="549,232,0,0" Text="MPART"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="提示" VerticalAlignment="Top" Margin="171,269,0,0" Width="57"/>
         <TextBlock x:Name="txtFMessage" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="243,263,0,0" Width="226" Foreground="Red"/>
         <ListBox x:Name="listFResult" HorizontalAlignment="Left" Height="111" VerticalAlignment="Top" Width="667" Margin="55,293,0,0"/>
         <Button x:Name="btnShow" Content="查看文件" HorizontalAlignment="Left" VerticalAlignment="Top" Width="75" Margin="55,432,0,0" Click="BtnShow_Click"/>
         <TextBox x:Name="txtShowTable" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="171,428,0,0" Text="DESF"/>
+        <Label x:Name="labShow" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="63,480,0,0"/>
+        <TextBox x:Name="txtPartNo" HorizontalAlignment="Left" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Margin="664,231,0,0" Text=""/>
 
     </Grid>
 </Window>
