@@ -67,8 +67,8 @@ namespace RequestImg
 
         private async void BtnGuan_Click(object sender, RoutedEventArgs e)
         {
-            // http://localhost:8080/sipmweb/api/b2c33e12ebabc498ccd9ec39712a1d5c/relation/MPART /01_B864B6D8CC78460E852592BABC4E8DCB/data?re=MPART_DESF&extra=&item=DESF
-            //http://192.168.0.197:7777/sipmweb/api/4e5d28459b5951d03c88eb4cc790c8e2/relation/MPART/01_8C570358FDED4186B39A7DDBFABD34DB/data?re=MPART_DESF&extra=&item=DESF
+        // http://localhost:8080/sipmweb/api/b2c33e12ebabc498ccd9ec39712a1d5c/relation/MPART /01_B864B6D8CC78460E852592BABC4E8DCB/data?re=MPART_DESF&extra=&item=DESF
+        //http://192.168.0.197:7777/sipmweb/api/4e5d28459b5951d03c88eb4cc790c8e2/relation/MPART/01_8C570358FDED4186B39A7DDBFABD34DB/data?re=MPART_DESF&extra=&item=DESF
             listFResult.Items.Clear();
             resultData = new List<string>();
             myparam = new Dictionary<string, string>();
