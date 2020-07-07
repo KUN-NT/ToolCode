@@ -1,0 +1,16 @@
+﻿<appSettings>
+  <!--以下为 写入工艺参数 程序的默认参数，已按模版设置, 请在开发人员指导下修改 v1.0 -->
+
+  <!--条码打印机IP-->
+  <!--<add key="Barcode_Printer_Ip" value="192.168.44.163" />-->
+
+  <!--条码打印机名称 POSTEK G-3106 Microsoft Print to PDF -->
+  <!--<add key="Barcode_Printer_Name" value="POSTEK G-3106" />-->
+
+  <!--条码标题自动换行长度-->
+  <!--<add key="Barcode_Caption_Length" value="40" />-->
+
+  <!--其他打印机（辐照证明打印机） -->
+  <add key="Printer_Name" value="HP LaserJet Professional P1106" />
+
+</appSettings>

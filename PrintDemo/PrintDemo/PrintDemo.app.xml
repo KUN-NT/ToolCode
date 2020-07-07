@@ -1,0 +1,15 @@
+﻿<appSettings>
+
+  <!--以下为 写入工艺参数 程序的默认参数，已按模版设置, 请在开发人员指导下修改 v1.0 -->
+  <add key="ProgTitle" value="CGNHW 打印客户端 v2.0"/>
+
+  <!-- 是否隐藏窗体 Y N -->
+  <add key="SafeHide" value="N" name="是否隐藏窗体" />
+
+  <!-- 是否允许多进程，0为不允许，1为允许。服务端设置为1，客户端启用设置为0。 -->
+  <add key="Allow_Ruplicate" value="0"/>
+
+  <!-- 提醒弹窗类型，0为MessageBox，1为RadDesktopAlert -->
+  <add key="MessageBox_Type" value="0"/>
+
+</appSettings>

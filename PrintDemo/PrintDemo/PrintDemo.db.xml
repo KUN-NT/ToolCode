@@ -1,0 +1,10 @@
+﻿<appSettings>
+
+  <!--当前连接字符串-->
+
+  <!--<add key="ConStr" value="Data Source=192.168.0.20/orcl;User ID=WJYL_IPMS_MES;Password=MESPASS;"/>-->
+
+  <add key="ConStr" value="Data Source=localhost/ORCL;User ID=KAIAN_MES_PPM;Password=PPMPASS;"/>
+
+  <!--<add key="ConStr" value="Data Source=KUN;User ID=WJYL_IPMS_MES;Password=MESPASS;"/>-->
+</appSettings>
